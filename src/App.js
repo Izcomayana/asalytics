@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const ASALYTICS_QUERY = `{
       asalist {
-        results {
+        result {
           name
           assetId
           available
@@ -26,12 +26,12 @@ function App() {
             query: ASALYTICS_QUERY 
           })
           setLoading(false)
-          // .then(data => {console.log(data)})
-          console.log(res.data.data.asalist.results)
-          setResults(res.data.data.asalist.results)
+          console.log(res)
+          setResults(res.data.data.asalist.result)
     }
+
     fetchData()
-  }, [])
+  }, [ASALYTICS_QUERY])
   
   return (
     <div className="app" id='app'>
